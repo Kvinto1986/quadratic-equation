@@ -1,21 +1,20 @@
 module.exports = function solveEquation(equation) {
-  var str=equation;
-    str=str.replace(/\s+/g,'');
-    var formula;
-    formula=str.match(/\-?\d{2,}/g);
-    var a=new Number(formula[0]);
-    var b=new Number(formula[1]);
-    var c=new Number(formula[2]);
-    var x1, x2, d;
-    d = b*b - 4*a*c;
-    x1 = (-b - Math.sqrt(d))/(2*a);
-    x2 = (-b + Math.sqrt(d))/(2*a);
+
+    equation=equation.replace(/\s+/g,'');
+    let formula;
+    formula=equation.match(/\-?\d{2,}/g);
+    const A=new Number(formula[0]);
+    const B=new Number(formula[1]);
+    const C=new Number(formula[2]);
+    let x1, x2, d;
+    d = B*B - 4*A*C;
+    x1 = (-B - Math.sqrt(d))/(2*A);
+    x2 = (-B + Math.sqrt(d))/(2*A);
     x1=Math.round(x1);
     x2=Math.round(x2);
+    let result;
     if(x2<x1)
-    var result=[x2,x1];
+     result=[x2,x1];
     else result=[x1,x2];
     return result;
-
-
 }
